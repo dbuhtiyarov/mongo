@@ -1,0 +1,57 @@
+version: '3'
+services:
+  db01:
+    image: mongo:3.0
+    volumes:
+    - datadb01:/data/db
+    - ./mongod.conf:/etc/mongod.conf
+    ports:
+    - "30001:27017"
+    command: ["mongod", "--smallfiles", "--config", "/etc/mongod.conf"]
+    container_name: db01
+ 
+  db02:
+    image: mongo:3.0
+    volumes:
+    - datadb02:/data/db
+    - ./mongod.conf:/etc/mongod.conf
+    ports:
+    - "30002:27017"
+    command: ["mongod", "--smallfiles", "--config", "/etc/mongod.conf"]
+    container_name: db02
+
+  db03:
+    image: mongo:3.0
+    volumes:
+    - datadb03:/data/db
+    - ./mongod.conf:/etc/mongod.conf
+    ports:
+    - "30003:27017"
+    command: ["mongod", "--smallfiles", "--config", "/etc/mongod.conf"]
+    container_name: db03
+
+  nginx: 
+    image: nginx:latest
+    container_name: production_nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+      - 443:443
+      - 27017:27017
+
+  mongoClient:
+    image: mongo:3.0
+    container_name: mongoClient
+    links:
+      - db01
+    volumes:
+      - ./rs.init.sh:/tmp/rs.init.sh
+    entrypoint: /tmp/rs.init.sh
+    depends_on:
+      - db01
+ 
+volumes:
+  datadb01:
+  datadb02:
+  datadb03:
