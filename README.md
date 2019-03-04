@@ -16,4 +16,4 @@ The idea is to have like-prod layout what could be install locally for test purp
 3.mongoimport --host ${RS_NAME}/${VM_IP}:27017 -d test-db --file /opt/test.json (save some lines from 1. as test.json)<br/>
 <br/>
 RS_NAME - name of the replication set (rs0 in that example)<br/>
-VM_IP - IP of the VM<br/>
+VM_IP - IP of the LoadBalancer<br/>
