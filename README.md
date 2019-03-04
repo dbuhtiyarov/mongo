@@ -23,7 +23,7 @@ VM_IP - IP of the Nginx LoadBalancer (VM IP)
 
 2. docker exec -ti db01 bash<br/>
 2.1 mongo<br/>
-2.3 rs.status()<br/>
+2.2 rs.status()<br/>
 is should returnt the status of replica-set with no issues 
 
 ### Data extract 
