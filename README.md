@@ -15,14 +15,25 @@ The idea is to have like-prod layout what could be install locally for test purp
 
 * docker-compose up -d
 
+### Validation
+
+1. curl ${VM_IP}:27017
+it shout returt "It looks like you are trying to access MongoDB over HTTP on the native driver port"
+VM_IP - IP of the Nginx LoadBalancer (VM IP)
+
+2. docker exec -ti db01 bash
+2.1 mongo
+2.3 rs.status()
+is should returnt the status of replica-set with no issues 
+
 ### Data extract 
 
 1. http://media.mongodb.org/zips.json could be used as simple data (a couple of lines is enough)<br/> 
 2. docker exec -ti mongoClient bash<br/>
-3. mongoimport --host ${RS_NAME}/${VM_IP}:27017 -d test-db --file /opt/test.json (save some lines from 1. as test.json)<br/>
+3. mongoimport --host ${RS_NAME}/${VM_IP}:27017 -d test-db --file /opt/test.json (some lines from 1. already saved as /opt/test.json)<br/>
 <br/>
 RS_NAME - name of the replication set (rs0 in that example)<br/>
-VM_IP - IP of the LoadBalancer<br/>
+VM_IP - IP of the Nginx LoadBalancer(VM IP)<br/>
 
 ### Deletion
 
