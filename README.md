@@ -7,7 +7,7 @@
 The idea is to have like-prod layout what could be install locally for test purposes 
 
 
-### Installing
+### Installation
 
 * docker-compose up -d
 
@@ -19,3 +19,7 @@ The idea is to have like-prod layout what could be install locally for test purp
 <br/>
 RS_NAME - name of the replication set (rs0 in that example)<br/>
 VM_IP - IP of the LoadBalancer<br/>
+
+### Deletion
+
+* docker-compose rm -f -s -v
