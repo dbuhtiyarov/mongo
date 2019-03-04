@@ -1,7 +1,6 @@
 # POC for MongoDB as replica-set and nginx as load-balancer 
 
 ![Architecture](https://docs.mongodb.com/manual/_images/replica-set-primary-with-two-secondaries.bakedsvg.svg)
-![Primarydown](https://docs.mongodb.com/manual/_images/replica-set-trigger-election.bakedsvg.svg)
 
 ## Description
 
