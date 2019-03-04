@@ -1,5 +1,8 @@
 # POC for MongoDB as replica-set and nginx as load-balancer 
 
+![Architecture](https://docs.mongodb.com/manual/_images/replica-set-primary-with-two-secondaries.bakedsvg.svg)
+![Primarydown](https://docs.mongodb.com/manual/_images/replica-set-trigger-election.bakedsvg.svg)
+
 ## Description
 
 The idea is to have like-prod layout what could be install locally for test purposes 
