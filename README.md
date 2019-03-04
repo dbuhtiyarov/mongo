@@ -21,7 +21,7 @@ The idea is to have like-prod layout what could be install locally for test purp
 it shout returt "It looks like you are trying to access MongoDB over HTTP on the native driver port"<br/>
 VM_IP - IP of the Nginx LoadBalancer (VM IP)
 
-2. docker exec -ti db01 bash
+2. docker exec -ti db01 bash<br/>
 2.1 mongo<br/>
 2.3 rs.status()<br/>
 is should returnt the status of replica-set with no issues 
