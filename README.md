@@ -6,6 +6,10 @@
 
 The idea is to have like-prod layout what could be install locally for test purposes 
 
+### System Requirements
+
+* docker
+* docekr-compose
 
 ### Installation
 
